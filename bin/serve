@@ -13,7 +13,8 @@ var resolve = require('path').resolve
   , jade = require('jade')
   , less = require('less-middleware')
   , url = require('url')
-  , fs = require('fs');
+  , fs = require('fs')
+  , colors = require('colors');
 
 // CLI
 
@@ -130,6 +131,6 @@ if (program.dirs) {
 
 // start the server
 server.listen(program.port, function () {
-  console.log('\033[90mserving \033[36m%s\033[90m on port \033[96m%d\033[0m', path, program.port);
+  console.log('serving '.magenta + path.cyan +' on port '.magenta +  program.port.toString().cyan);
 });
 
